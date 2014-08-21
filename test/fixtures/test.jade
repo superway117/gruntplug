@@ -1,0 +1,35 @@
+!!! 5
+html#ng-app(ng-app='myApp' xmlns:ng='http://angularjs.org', lang='zh',  class='no-ie8compat')
+  head
+    //Lets set up our page a bit.
+    //==========================================================================
+    title(ng-if(title) ng-model="{{title}}")
+    title(ng-if(!title) ng-model="xx")
+    meta(charset="utf-8")
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    meta(name='viewport', content='initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width')
+    meta(name='description', content='ToyPai 带给孩子好玩的玩具.')
+    meta(name='author', content='xuluan')
+    link(rel="icon", href="/images/favicon.ico", type="image/x-icon")
+    link(rel="stylesheet", href="css_phone/style.min.css")
+    link(rel="stylesheet", href="lib/ionic/css/ionic.min.css")
+
+  //The content of our page.
+  //==========================================================================
+  body( animation="slide-left-right-ios7")
+    <ion-nav-view></ion-nav-view>
+
+  // Load Angular Configuration
+  script(type='text/javascript').
+    window.upyunlink = "#{link}"
+    window.g_name = "#{settings.front_name}"
+    window.g_addr = "#{settings.addr}"
+    window.g_tel = "#{settings.tel}"
+    window.g_qq = "#{settings.qq}"
+    window.g_email = "#{settings.email}"
+
+  //script(src="lib/ionic/js/ionic.bundle.js")
+  //script(src="lib/bindonce/bindonce.js")
+  script(src='/js/phone.min.js')
+
+
